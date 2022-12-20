@@ -178,32 +178,32 @@ function continua() {
         cartasEscogidas.push(nomCarta); //Anotamos el nombre.
         idcartasEscogidas.push(idCarta); //Anotamos en otro vector el id.
         this.setAttribute('src', cartas[idCarta].img); //Mostramos la imagen que tiene asociada.
-        
+
         //Si le damos click a la muerte nos lleva a la función gameover.
         if (nomCarta == "muerte") {
             setTimeout(gameover1, 500);
-    }
+        }
         if (cartasEscogidas.length == 2) { //Si ya ha escogido dos cartas comprobará si son la misma.
             setTimeout(mirarCoincidencia, 500);
         }
     }
 
-    
-        //Funcion para añadir 10 errores cuando haces click en la muerte.
-        function gameover1() {
-            const idPrimera = idcartasEscogidas[0];
-            const vectorImagenes = document.querySelectorAll('img');
-            if (cartasEscogidas.length === 2) {
-                vectorImagenes[idPrimera].setAttribute('src', 'img/muerte.png');
-                vectorImagenes[idSegunda].setAttribute('src', 'img/muerte.png');
-            } else {
-                vectorImagenes[idPrimera].setAttribute('src', 'img/muerte.png');
-            }
-            cartasEscogidas = [];
-            idcartasEscogidas = [];
-            numErrores += 10;
-            elNumeroErrores.innerHTML = numErrores;
+
+    //Funcion para añadir 10 errores cuando haces click en la muerte.
+    function gameover1() {
+        const idPrimera = idcartasEscogidas[0];
+        const vectorImagenes = document.querySelectorAll('img');
+        if (cartasEscogidas.length === 2) {
+            vectorImagenes[idPrimera].setAttribute('src', 'img/muerte.png');
+            vectorImagenes[idSegunda].setAttribute('src', 'img/muerte.png');
+        } else {
+            vectorImagenes[idPrimera].setAttribute('src', 'img/muerte.png');
         }
+        cartasEscogidas = [];
+        idcartasEscogidas = [];
+        numErrores += 10;
+        elNumeroErrores.innerHTML = numErrores;
+    }
 
 
     //Miramos si coinciden
@@ -211,7 +211,7 @@ function continua() {
         const vectorImagenes = document.querySelectorAll('img'); //Creamos un vector para seleccionar todas las imágenes.
         const idPrimera = idcartasEscogidas[0]; //Index primera carta.
         const idSegunda = idcartasEscogidas[1]; //Index segunda carta.
-        
+
 
         //Condición para comprobar si la pareja elegida por el usuario es la correcta.
         if (idPrimera == idSegunda) {
@@ -239,16 +239,16 @@ function continua() {
 
         if (numParejas == (cartas.length - 1) / 2) {
             new Audio("sonidos/victoria.mp3").play();
-            if(numErrores <= "5"){
+            if (numErrores <= "5") {
                 alert("Nivel Jedi");
                 location.reload();
             } else if (numErrores >= "6" && numErrores <= "10") {
                 alert("Nivel Experto");
                 location.reload();
-            } else if (numErrores >= "11" && numErrores <= "20"){
+            } else if (numErrores >= "11" && numErrores <= "20") {
                 alert("Nivel regular");
                 location.reload();
-            } else{
+            } else {
                 alert("Este juego no es lo tuyo.");
                 location.reload();
             }
