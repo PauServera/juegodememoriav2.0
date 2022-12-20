@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="tipo_contenido" content="text/html;" http-equiv="content-type" charset="utf-8">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <title>Juego</title>
+    <script src="script.js" charset="utf-8"></script>
+
+</head>
+
+<body>
+    <script>
+        window.onload = function () { alert('Bienvenido a juego de memória.'); }
+    </script>
+    
+    <div class=all>
+        <div class=inicio>
+            <h1>JUEGO DE MEMÓRIA</h1>
+        </div>
+        <div class=contador>
+            <h3>Parejas encontradas</h3>
+            <p id="pOK">0</p>
+            <h3>Intentos fallidos</h3>
+            <p id="pKK">0</p>
+            <br><br>
+            <div id="fechahoy"></div>
+            <script>
+                var d = new Date(); var month = new Array(12); month[0] = 'Enero'; month[1] = 'Febrero'; month[2] = 'Marzo'; month[3] = 'Abril'; month[4] = 'Mayo'; month[5] = 'Junio'; month[6] = 'Julio'; month[7] = 'Agosto'; month[8] = 'Septiembre'; month[9] = 'Octubre'; month[10] = 'Noviembre'; month[11] = 'Diciembre'; var todaysDate = +d.getDate() + ' de ' + month[d.getUTCMonth()] + ' del ' + d.getUTCFullYear();
+                document.getElementById('fechahoy').innerHTML = 'Hoy es: ' + todaysDate;
+            </script>
+            <br>
+            <h3>Nombre del usuario:</h3>
+            <input type="text" name="nombrejugador" id="jugador">
+            <br><br>
+            <button id="goBtn">JUGAR</button>
+            <br><br>
+            <div id="number"></div>
+        </div>
+
+        <div id="grid"></div>
+    </div>
+
+    <noscript>
+        <META http-equiv="Refresh" content="0;URL=nojava.html">
+    </noscript>
+
+</body>
+
+</html>

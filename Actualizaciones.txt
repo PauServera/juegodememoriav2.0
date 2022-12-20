@@ -1,0 +1,11 @@
+------------------------------------------
+Juego de memória v.2.0.
+
+- El juego funciona sobre 25 casillas.
+- Las parejas encontradas desaparecen.
+- Si no tienes JavaScript activado te redirige a una página para avisarte que debes activarlo.
+- Según la puntuación del usuario muestra un mensaje final personalizado.
+- Hay sonidos para celebrar y lamentar las jugadas.
+- También hay sonido cuando se gira una carta.
+- Cuando haces click en la carta "prohibida" se suman 10 errores.
+- He añadido movimiento al título del juego.
